@@ -10,9 +10,11 @@
 
 // -------------------------------------
 
-const inputString = "Javascript Rocks!";
+const inputString = "Different String";
 let reversedString = "";
 
 // Your code here
-
+for (let i = inputString.length - 1; i >= 0; i--) {
+  reversedString += inputString[i];
+}
 console.log(reversedString);
