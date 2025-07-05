@@ -19,34 +19,18 @@ node dogAgeCalculator.js
 
 */
 
-let dogName = (process.argv[2]);
-let dogYears = Number(process.argv[3])(humanAge);
-let humanAge = Number(process.arg[4]);
+let dogName = process.argv[2];
+let humanAge = Number(process.argv[4]);
 
-function calculateDogYears(dogYears) {
-    if (isNaN(dogYears) || dogYears <= 0) 
-
-      if (humanAge === 1) {
-        dogYears = 15;
-    } else if (humanAge === 2) {
-        dogYears = 15 + 9; 
-    } else if (humanAge > 2) {
-        dogYears = 15 + 9 + (humanAge 
-            + 1) * 5;
-    } else {
-        
-        dogYears;
-    }
-    return calculateDogYears;
+const dogAge = Number(process.argv[3]);
+if (humanAge === 1) {
+  dogAge = 15;
+} else if (humanAge === 2) {
+  dogAge = 15 + 9;
+} else if (humanAge > 2) {
+  dogAge = 15 + 9 + (humanAge + 1) * 5;
+} else {
+  console.log(
+    `${dogName} is ${humanAge} human years old, which is ${dogAge} in dog years.`
+  );
 }
-
-
-
-
-
-
-
-
-
-
-console.log(`${dogName} is ${humanAge} human years old, which is ${dogYears} in dog years.`);
