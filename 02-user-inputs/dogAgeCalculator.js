@@ -30,7 +30,10 @@ if (humanAge === 1) {
 } else if (humanAge > 2) {
   dogAge = 15 + 9 + (humanAge + 1) * 5;
 } else {
+
+  let calculatedAge = dogAge(humanAge);
   console.log(
-    `${dogName} is ${humanAge} human years old, which is ${dogAge} in dog years.`
+    `${dogName} is ${humanAge} human years old, which is ${calculatedAge} in dog years.`
   );
+
 }
