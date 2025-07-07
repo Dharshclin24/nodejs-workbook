@@ -20,20 +20,20 @@ node dogAgeCalculator.js
 */
 
 let dogName = process.argv[2];
-let humanAge = Number(process.argv[4]);
+let humanAge = Number(process.argv[3]);
 
-const dogAge = Number(process.argv[3]);
+let dogAge 
 if (humanAge === 1) {
   dogAge = 15;
 } else if (humanAge === 2) {
   dogAge = 15 + 9;
 } else if (humanAge > 2) {
-  dogAge = 15 + 9 + (humanAge + 1) * 5;
-} else {
+  dogAge = 15 + 9 + (humanAge -2) * 5;
+} 
 
-  let calculatedAge = dogAge(humanAge);
+
   console.log(
-    `${dogName} is ${humanAge} human years old, which is ${calculatedAge} in dog years.`
+    `${dogName} is ${humanAge} human years old, which is ${dogAge} in dog years.`
   );
 
-}
+
