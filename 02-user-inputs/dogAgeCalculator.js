@@ -18,9 +18,10 @@ Run this file with the node command:
 node dogAgeCalculator.js
 
 */
-
+//------global variables declared to hold the value of dog name and human age in the array places of 2 & 3 
 let dogName = process.argv[2];
 let humanAge = Number(process.argv[3]);
+//---function and variable declared to calculate the dog age in human years----
 
 let dogAge 
 if (humanAge === 1) {
@@ -31,7 +32,7 @@ if (humanAge === 1) {
   dogAge = 15 + 9 + (humanAge -2) * 5;
 } 
 
-
+//-----console log created to run the script---
   console.log(
     `${dogName} is ${humanAge} human years old, which is ${dogAge} in dog years.`
   );
