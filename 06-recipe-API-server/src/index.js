@@ -5,7 +5,7 @@
 // ---------------------------------
 
 // importing our Node modules
-import express from "express"; // the framework we use to build a web server
+import express from "express"; // the framework I use to build a web server
 import fs from "fs/promises"; // the File System module that lets us read files
 
 // Creating an instance of the express module so that we can use all of its superpowers, including its functions, properties, etc.
@@ -59,7 +59,7 @@ app.get("/get-all-recipes", async (req, res) => {
 app.get("/get-one-recipe/:index", async (req, res) => {
   const recipeIndex = req.params.index;
 
-  // we need to get the recipe from the data.json
+  // to get the recipe from the data.json
   const recipe = await getOneRecipe(recipeIndex);
 
   // then send the recipe  back in the response
