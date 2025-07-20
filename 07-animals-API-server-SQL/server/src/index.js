@@ -49,6 +49,12 @@ async function getOneAnimal(animalName) {
 }
 
 // Helper function for /delete-one-animal/:name
+async function removeOneAnimal(removedAnimalName) {
+  const result = await db.query("DELETE FROM animals WHERE name = $1", [
+    removedAnimalName,
+  ]);
+  return result.rows[0];
+}
 
 // Helper function for /add-one-animal
 
@@ -62,6 +68,13 @@ async function addOneAnimal(animal) {
 // Helper function for /update-one-animal
 
 // ---------------------------------
+async function updateOneAnimal(updatedAnimal) {
+  await db.query(
+    "UPDATE animals SET name = $1, category = $2, can_fly = $3, lives_in = $4 WHERE name = $1",
+    
+    [animal.name, animal.category, animal.can_fly, animal.lives_in]
+  );
+}
 // API Endpoints
 // ---------------------------------
 
@@ -84,6 +97,11 @@ app.get("/get-one-animal/:name", async (req, res) => {
 });
 
 // GET /delete-one-animal/:name
+app.get("/get-one-animal/:name", async (req, res) => {
+  const removedAnimalName = req.params.name;
+  const removedAnimal = await removeOneAnimal(removedAnimalName);
+  res.json(removedAnimal);
+});
 
 // POST /add-one-animal
 app.post("/add-one-animal", async (req, res) => {
@@ -93,3 +111,8 @@ app.post("/add-one-animal", async (req, res) => {
 });
 
 // POST /update-one-animal
+app.post(`/update-one-animal`, async (req, res) => {
+  const updatedAnimal = req.body;
+  updateOneAnimal(updatedAnimal);
+  res.send("The animal was successfully updated!");
+});
