@@ -89,14 +89,14 @@ app.get("/get-all-animals", async (req, res) => {
 // res.send() sends a response as a String
 // res.json() sends a response as a JSON object
 
-// GET /get-one-animal/:name
+// GET /get-one-animal/:name with  a dynamic url.
 app.get("/get-one-animal/:name", async (req, res) => {
   const animalName = req.params.name;
   const animal = await getOneAnimal(animalName);
   res.json(animal);
 });
 
-// GET /delete-one-animal/:name
+// GET /delete-one-animal/:name with a dynamic url.
 app.get("/get-one-animal/:name", async (req, res) => {
   const removedAnimalName = req.params.name;
   const removedAnimal = await removeOneAnimal(removedAnimalName);
